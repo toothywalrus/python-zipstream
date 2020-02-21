@@ -263,7 +263,7 @@ class ZipFile(zipfile.ZipFile):
             zinfo.compress_type = compress_type
 
         if st:
-            zinfo.file_size = st[6]
+            zinfo.file_size = os.path.getsize(filename)
         else:
             zinfo.file_size = 0
         zinfo.flag_bits = 0x00
